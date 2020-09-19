@@ -32,9 +32,3 @@ jenkins:
   slaveAgentPort: 50000
   agentProtocols:
     - "jnlp2"
-
-tool:
-  git:
-    installations:
-      - name: git
-        home: /usr/local/bin/git
