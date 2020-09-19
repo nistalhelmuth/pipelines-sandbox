@@ -1,34 +1,7 @@
 jenkins:
-  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
-  globalNodeProperties:
-  - envVars:
-      env:
-      - key: VARIABLE1
-        value: foo
-      - key: VARIABLE2
-        value: bar
-  securityRealm:
-    ldap:
-      configurations:
-        - groupMembershipStrategy:
-            fromUserRecord:
-              attributeName: "memberOf"
-          inhibitInferRootDN: false
-          rootDN: "dc=acme,dc=org"
-          server: "ldaps://ldap.acme.org:1636"
+  systemMessage: "\n\nDemo setup for Jenkins Configuration as Code plugin......\n\n"
 
-  nodes:
-    - permanent:
-        name: "static-agent"
-        remoteFS: "/home/jenkins"
-        launcher:
-          jnlp:
-            workDirSettings:
-              disabled: true
-              failIfWorkDirIsMissing: false
-              internalDir: "remoting"
-              workDirPath: "/tmp"
-
-  slaveAgentPort: 50000
-  agentProtocols:
-    - "jnlp2"
+  numExecutors: 1
+  mode: NORMAL
+  scmCheckoutRetryCount: 3
+  labelString: "master-label"  
