@@ -47,6 +47,7 @@ jobs:
               git {
                 remote {
                   url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+                  credentials('github-user')
                 }
                 branch('*/master')
               }
