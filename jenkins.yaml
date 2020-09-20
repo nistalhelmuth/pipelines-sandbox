@@ -25,6 +25,9 @@ jenkins:
 jobs:
   - script: >
       pipelineJob('pipeline-creator') {
+        authorization {
+          permissionAll("admin")
+        }
         definition {
           cpsScm {
             scm {
