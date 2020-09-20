@@ -12,3 +12,21 @@ jenkins:
       users:
        - id: admin
          password: admin123
+         
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:anonymous"
+        - "Job/Read:anonymous"
+        - "View/Read:anonymous"
+        - "Overall/Administer:anonymous"
+   
+  crumbIssuer: "standard"
+
+  remotingSecurity:
+    enabled: true   
+
+
+security:
+  remotingCLI:
+    enabled: false
