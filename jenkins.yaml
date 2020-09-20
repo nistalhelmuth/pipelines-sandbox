@@ -27,6 +27,7 @@ jobs:
       pipelineJob('pipeline-creator') {
         authorization {
           permissionAll("admin")
+          blocksInheritance()
         }
         definition {
           cpsScm {
