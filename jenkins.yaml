@@ -17,7 +17,7 @@ jenkins:
     globalMatrix:
       grantedPermissions:
         - "Overall/Read:anonymous"
-        - "Overall/Administer:Authenticated"
+        - "Overall/Administer:authenticated"
    
   crumbIssuer: "standard"
   
