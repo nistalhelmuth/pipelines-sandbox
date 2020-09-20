@@ -24,7 +24,7 @@ jenkins:
       
 jobs:
   - script: >
-      pipelineJob('my-pipeline') {
+      pipelineJob('pipeline-creator') {
         definition {
           cpsScm {
             scm {
