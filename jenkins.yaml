@@ -23,21 +23,23 @@ jenkins:
   
   remotingSecurity:
     enabled: true
-
+      
 jobs:
   - script: >
-      pipelineJob('testing') {
+      pipelineJob('default-agent') {
         definition {
-          cpsScm {
-            scm {
-              git {
-                remote {
-                  url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+          cps {
+            script("""\
+              pipeline {
+                agent any
+                stages {
+                  stage ('test') {
+                    steps {
+                      echo "hello"
+                    }
+                  }
                 }
-                branch('*/master')
-              }
-            }
-            lightweight()
+              }""".stripIndent())
           }
         }
       }
