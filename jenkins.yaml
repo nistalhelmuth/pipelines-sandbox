@@ -23,3 +23,22 @@ jenkins:
   
   remotingSecurity:
     enabled: true
+
+jobs:
+  - script: 
+    pipelineJob('testing') {
+      definition {
+        cpsScm {
+          scm {
+            git {
+              remote {
+                url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+              }
+              branch('*/master')
+            }
+          }
+          lightweight()
+        }
+      }
+    }
+ 
