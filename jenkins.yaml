@@ -26,21 +26,18 @@ jenkins:
       
 jobs:
   - script: >
-      pipelineJob('default-agent') {
+      pipelineJob('job-dsl-plugin') {
         definition {
-          cps {
-            script("""\
-              pipeline {
-                agent any
-                stages {
-                  stage ('test') {
-                    steps {
-                      echo "hello"
-                    }
-                  }
+          cpsScm {
+            scm {
+              git {
+                remote {
+                  url('https://github.com/jenkinsci/job-dsl-plugin.git')
                 }
-              }""".stripIndent())
+                branch('*/master')
+              }
+            }
+            lightweight()
           }
         }
       }
- 
