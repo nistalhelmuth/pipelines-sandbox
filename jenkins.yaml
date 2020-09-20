@@ -46,7 +46,7 @@ jobs:
             scm {
               git {
                 remote {
-                  url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+                  github('nistalhelmuth/pipelines-sandbox')
                   credentials('github-user')
                 }
                 branch('*/master')
