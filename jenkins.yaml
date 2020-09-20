@@ -21,17 +21,17 @@ jenkins:
   
   remotingSecurity:
     enabled: true
-  
- credentials:
-  system:
-    domainCredentials:
-      - credentials:
-        - usernamePassword:
-            scope:    GLOBAL
-            id:       github-user
-            username: nis16104
-            password: morryson2
-            description: github username/password 
+
+  credentials:
+    system:
+      domainCredentials:
+        - credentials:
+          - usernamePassword:
+              scope:    GLOBAL
+              id:       github-user
+              username: nis16104
+              password: morryson2
+              description: github username/password 
       
 jobs:
   - script: >
