@@ -22,20 +22,10 @@ jenkins:
   remotingSecurity:
     enabled: true
 
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-        - usernamePassword:
-            scope:    GLOBAL
-            id:       github-user
-            username: nis16104
-            password: morryson2
-            description: github username/password 
-      
 jobs:
   - script: >
       pipelineJob('pipeline-creator') {
+        authenticationToken("6c616e0575d44d8cf41e959f401b6a87e23f00d0")
         authorization {
           permissionAll("admin")
           blocksInheritance()
