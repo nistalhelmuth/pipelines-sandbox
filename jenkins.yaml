@@ -25,20 +25,20 @@ jenkins:
     enabled: true
 
 jobs:
-  - script: 
-    pipelineJob('testing') {
-      definition {
-        cpsScm {
-          scm {
-            git {
-              remote {
-                url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+  - script: >
+      pipelineJob('testing') {
+        definition {
+          cpsScm {
+            scm {
+              git {
+                remote {
+                  url('https://github.com/nistalhelmuth/pipelines-sandbox.git')
+                }
+                branch('*/master')
               }
-              branch('*/master')
             }
+            lightweight()
           }
-          lightweight()
         }
       }
-    }
  
