@@ -14,10 +14,8 @@ jenkins:
          password: admin123
          
   authorizationStrategy:
-    globalMatrix:
-      grantedPermissions:
-        - "Overall/Read:anonymous"
-        - "Overall/Administer:authenticated"
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: true
    
   crumbIssuer: "standard"
   
