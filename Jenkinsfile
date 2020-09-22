@@ -5,7 +5,8 @@ pipeline {
       steps{
         echo 'Building'
         sh 'ls'
-        sh 'docker-compose up'
+        sh 'docker build -t my-django-app .'
+        sh 'docker run --name some-django-app -p 80:8000 -d my-django-app'
         echo 'build ready'
       }
     }
