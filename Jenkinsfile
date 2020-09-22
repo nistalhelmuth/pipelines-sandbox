@@ -4,6 +4,8 @@ pipeline {
     stage('Build') {
       steps{
         echo 'Building'
+        sh 'docker-compose up'
+        echo 'build ready'
       }
     }
     stage('Test') {
