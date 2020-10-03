@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps{
+      steps {
         echo 'Building'
         sh 'ls'
         sh 'docker build -t my-django-app .'
@@ -10,15 +10,19 @@ pipeline {
         echo 'build ready'
       }
     }
+
     stage('Test') {
-      steps{
+      steps {
         echo 'Test'
+        input(message: 'hola Alvhi', ok: 'contiunar?')
       }
     }
+
     stage('Deploy') {
-      steps{
+      steps {
         echo 'Deploying'
       }
     }
+
   }
 }
