@@ -6,23 +6,11 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'docker build -t my-django-app .'
-        sh 'docker run --name some-django-app -P -d my-django-app'
+        sh 'docker run --rm -d --name some-django-app -p80:80 my-django-app'
         echo 'build ready'
       }
     }
 
-    stage('Test') {
-      steps {
-        echo 'Test'
-        input(message: 'hola Alvhi', ok: 'contiunar?')
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        echo 'Deploying'
-      }
-    }
 
   }
 }
