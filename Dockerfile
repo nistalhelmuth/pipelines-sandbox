@@ -8,5 +8,5 @@ COPY . /code/
 
 EXPOSE 80
 WORKDIR /code/
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+CMD ["python", "manage.py", "runserver", "[::]:80"]
 
