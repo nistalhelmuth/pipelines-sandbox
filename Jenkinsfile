@@ -10,6 +10,16 @@ pipeline {
         echo 'build ready'
       }
     }
+    stage('Testing') {
+      steps {
+        echo 'TESTING'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'DEPLOY'
+      }
+    }
 
 
   }
