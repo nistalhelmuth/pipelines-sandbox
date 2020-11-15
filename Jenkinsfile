@@ -12,13 +12,13 @@ pipeline {
     }
     stage('Testing') {
       steps {
-        sh 'docker exec -it testing-django-app python /code/manage.py test'
+        sh 'docker exec -i testing-django-app python /code/manage.py test'
         echo 'TESTING'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'docker stop django-app'
+        sh 'docker stop testing-django-app'
         sh 'docker run --rm -d --name django-app -p443:8000 django-app'
         echo 'DEPLOY'
       }
