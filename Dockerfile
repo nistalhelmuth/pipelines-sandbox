@@ -4,9 +4,9 @@ RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-COPY . /code/
+COPY mysite /code/
 
 EXPOSE 8000
 WORKDIR /code/
-CMD ["python", "manage.py", "runserver", "172.17.0.2:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
