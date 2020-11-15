@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Testing') {
       steps {
-        sh 'docker exec -it testing-django-app python /code/manage.py test'
+        sh 'winpty docker exec testing-django-app python /code/manage.py test'
         echo 'TESTING'
       }
     }
