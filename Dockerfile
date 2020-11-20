@@ -6,7 +6,10 @@ COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY mysite /code/
 
-EXPOSE 8000
 WORKDIR /code/
+ENV DJANGO_SUPERUSER_USERNAME admin
+ENV DJANGO_SUPERUSER_PASSWORD pass
+RUN python manage.py createsuperuser --noinput
+EXPOSE 8000
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
