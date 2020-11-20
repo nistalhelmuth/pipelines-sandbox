@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker run --rm -d --name django-app -p443:8000 django-app'
+        sh 'docker run --rm -d --name django-app -p80:8000 django-app'
         echo 'DEPLOY'
       }
     }
