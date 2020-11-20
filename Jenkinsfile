@@ -6,7 +6,7 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'docker build -t django-app .'
-        sh 'docker run --rm -d --name temp-django-app -p80:8000 django-app'
+        sh 'docker run --rm -d --name temp-django-app -p8000:8000 django-app'
         echo 'build ready'
       }
     }
