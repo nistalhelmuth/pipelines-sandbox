@@ -27,6 +27,7 @@ pipeline {
   }
   post {
       always {
+        sh 'docker stop temp-django-app || true'
         echo 'POST: ALWAYS'
       }
       success {
