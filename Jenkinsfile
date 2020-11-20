@@ -13,6 +13,7 @@ pipeline {
     stage('Testing') {
       steps {
         sh 'docker exec -i temp-django-app python /code/manage.py test'
+        sh 'docker stop temp-django-app || true'
         echo 'TESTING'
       }
     }
