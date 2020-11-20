@@ -19,6 +19,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'docker run --rm -d --name django-app -p80:8000 django-app'
+        sh 'docker exec -i django-app python /code/manage.py shell -c \"from django.contrib.auth.models import User; User.objects.create_superuser(\"admin\", \"admin@example.com\", \"adminpass\")\"'
         echo 'DEPLOY'
       }
     }
