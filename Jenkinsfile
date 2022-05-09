@@ -6,14 +6,14 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'docker build -t django-app .'
-        sh 'docker run --rm -d --name temp-django-app -p1234:8000 django-app'
+        sh 'docker run --rm -d --name temp-django-app-2 -p1234:8000 django-app'
         echo 'build ready'
       }
     }
     stage('Testing') {
       steps {
-        sh 'docker exec -i temp-django-app python /code/manage.py test'
-        sh 'docker stop temp-django-app || true'
+        sh 'docker exec -i temp-django-app-2 python /code/manage.py test'
+        sh 'docker stop temp-django-app-2 || true'
         echo 'TESTING'
       }
     }
@@ -27,7 +27,7 @@ pipeline {
   }
   post {
       always {
-        sh 'docker stop temp-django-app || true'
+        sh 'docker stop temp-django-app-2 || true'
         echo 'POST: ALWAYS'
       }
       success {
